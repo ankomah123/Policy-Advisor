@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    <link rel="icon" href="../../favicon.ico">
+
+	    <title>Ablaze</title>
+
+	    <!-- Bootstrap core CSS -->
+	    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+	    <!-- Font-Awesome CSS -->
+	    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+
+	    <!-- Custom styles for this template -->
+	    <link href="assets/css/login.css" rel="stylesheet">
+
+	    <style type="text/css">
+	    	body{
+			  background:black;
+			}
+
+			.container-fire{
+			  margin:55px auto;
+			  width: 60px;
+			  height: 60px;
+			  position:relative;
+			  transform-origin:center bottom;
+			  animation-name: flicker;
+			  animation-duration:3ms;
+			  animation-delay:200ms;
+			  animation-timing-function: ease-in;
+			  animation-iteration-count: infinite;
+			  animation-direction: alternate;
+			}
+
+			.flame{
+			  bottom:0;
+			  position:absolute;
+			  border-bottom-right-radius: 50%;
+			  border-bottom-left-radius: 50%;
+			  border-top-left-radius: 50%;
+			  transform:rotate(-45deg) scale(1.5,1.5);
+			}
+
+			.yellow{
+			  left:15px; 
+			  width: 30px;
+			  height: 30px;
+			  background:gold;
+			  box-shadow: 0px 0px 9px 4px gold;
+			}
+
+			.orange{
+			  left:10px; 
+			  width: 40px;
+			  height: 40px;
+			  background:orange;
+			  box-shadow: 0px 0px 9px 4px orange;
+			}
+
+			.red{
+			  left:5px;
+			  width: 50px;
+			  height: 50px;
+			  background:OrangeRed;
+			  box-shadow: 0px 0px 5px 4px OrangeRed;
+			}
+
+			.white{
+			  left:15px; 
+			  bottom:-4px;
+			  width: 30px;
+			  height: 30px;
+			  background:white;
+			  box-shadow: 0px 0px 9px 4px white;
+			}
+
+			.circle{
+			  border-radius: 50%;
+			  position:absolute;  
+			}
+
+			.blue{
+			  width: 10px;
+			  height: 10px;
+			  left:25px;
+			  bottom:-25px; 
+			  background: SlateBlue;
+			  box-shadow: 0px 0px 15px 10px SlateBlue;
+			}
+
+			.black{
+			  width: 40px;
+			  height: 40px;
+			  left:10px;
+			  bottom:-60px;  
+			  background: black;
+			  box-shadow: 0px 0px 15px 10px black;
+			}
+
+			@keyframes flicker{
+			  0%   {transform: rotate(-1deg);}
+			  20%  {transform: rotate(1deg);}
+			  40%  {transform: rotate(-1deg);}
+			  60%  {transform: rotate(1deg) scaleY(1.04);}
+			  80%  {transform: rotate(-2deg) scaleY(0.92);}
+			  100% {transform: rotate(1deg);}
+			}
+	    </style>
+  	</head>
+<body>
+	<section id="login">
+	  <div class="container">
+	    <div class="row">
+	    	<div class="col-xs-12 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+	    	  	<div class="row">
+    	    		<div class="col-xs-6">
+      	    			<div class="container-fire">
+    						<div class="red flame"></div>
+    						<div class="orange flame"></div>
+    						<div class="yellow flame"></div>
+    						<div class="white flame"></div>
+    						<div class="blue circle"></div>
+    						<div class="black circle"></div>
+						  </div>   
+	    	    		</div>
+		    	    	<div class="col-xs-6">
+		    	    		<h2 style="margin-top:85px;margin-left: -60px;">Ablaze</h2>
+		    	    	</div>
+	    	  		</div>
+          			<div class="login-page">
+			            <div class="form">
+			              <form role="form" action="javascript:;" method="POST" id="login-form" autocomplete="off" class="">
+			                <div class="form-group">
+			                    <label for="username" class="sr-only">Username</label>
+			                    <input type="text" name="username" id="username" class="form-control" placeholder="Username" required >
+			                </div>
+			                <div class="form-group">
+			                    <label for="password" class="sr-only">Password</label>
+			                    <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+			                </div>
+			                <div class="form-group">
+			                  <input type="submit" id="btn-login" class="btn btn-default btn-block" value="Log in">
+			                </div>
+			                  <a href="javascript:;" class="pull-left" data-toggle="modal" data-target=".forget-modal">Forgot your password?</a> 
+			                  <p class="message pull-right"><a href="#">Create an account</a></p><br>
+			                <hr>
+			              </form>
+			              <form role="form" action="javascript:;" method="POST" id="register-form" autocomplete="off" class="" style="display: none">
+			                <div class="form-group">
+			                    <label for="fname" class="sr-only">First Name</label>
+			                    <input type="text" name="fname" id="fname" class="form-control" placeholder="First Name" required >
+			                </div>
+			                <div class="form-group">
+			                    <label for="lname" class="sr-only">Last Name</label>
+			                    <input type="text" name="lname" id="lname" class="form-control" placeholder="Last Name" required >
+			                </div>
+			                <div class="form-group">
+			                    <label for="username" class="sr-only">Username</label>
+			                    <input type="text" name="username" id="username" class="form-control" placeholder="Username" required >
+			                </div>
+			                <div class="form-group">
+			                    <label for="email" class="sr-only">Email</label>
+			                    <input type="email" name="email" id="email" class="form-control" placeholder="Email" required >
+			                </div>
+			                <div class="form-group">
+			                    <label for="password" class="sr-only">Password</label>
+			                    <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+			                </div>
+			                <div class="form-group">
+			                    <label for="phone" class="sr-only">Phone Number</label>
+			                    <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone Number" required>
+			                </div>
+			                <div class="form-group">
+			                  <input type="submit" id="btn-login" class="btn btn-default btn-block" value="Create Account">
+			                </div>
+			                <p class="message">Already have an account? <a href="#">Log In</a></p>
+			                <hr>
+			              </form>
+			            </div>
+        			</div>
+       			</div>
+      		</div>
+    	</div>
+	</section>
+
+	<div class="modal fade forget-modal" tabindex="-1" role="dialog" aria-labelledby="myForgetModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-md">
+			<div class="modal-content">
+				<div class="modal-body">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">×</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title">Recovery password</h4>
+					<p>Type your email account</p>
+					<form action="#" method="#">
+						<input type="email" name="recovery-email" id="recovery-email" class="form-control" autocomplete="off" placeholder="Email">
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+							<button type="button" class="btn btn-primary">Recovery</button>
+						</div>
+					</form>
+				</div>
+			</div> <!-- /.modal-content -->
+		</div> <!-- /.modal-dialog -->
+	</div> <!-- /.modal -->
+
+	<footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-12">
+          <p>Powered by <strong style="color:white">Ablaze</strong></p>
+        </div>
+      </div>
+    </div>
+	</footer>
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    $('.message a').click(function(){
+      $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+    });
+  </script>
+</body>
+</html>

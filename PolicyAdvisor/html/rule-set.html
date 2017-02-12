@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Ablaze</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Font-Awesome CSS -->
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <!--DataTables-->
+    <link rel="stylesheet" type="text/css" href="assets/plugins/datatables/datatables.min.css">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><i class="fa fa-fire"></i> Ablaze</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Username <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Profile</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+     <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <div>
+            <img src="img/" alt="Image">
+          </div>
+          <ul class="nav nav-sidebar">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="policy.html">Policy</a></li>
+            <li><a href="rule-set.html">Rule</a></li>
+            <li><a href="#">Policy Graph</a></li>
+            <li><a href="monitor.html">Monitor</a></li>
+            <li><a href="#">Whitelist</a></li>
+            <li><a href="#">Blacklist</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">Rule Set
+              <a href="#" data-target="#addNewRuleSet" data-toggle="modal" class="btn btn-link btn-xs pull-right"><i class="fa fa-plus"></i> Add</a>
+            </div>
+            <div class="panel-body">
+              <!-- Table -->
+              <div class="table-responsive">
+                <table class="table" id="manageRuleSetTable">
+                  <thead> 
+                    <tr>
+                      <th>Active</th> 
+                      <th>Type</th> 
+                      <th>Rule</th> 
+                      <th>Protocol</th>
+                      <th>Source</th>
+                      <th>Port(s)</th>
+                      <th>Destination</th>
+                      <th>Port(s)</th>
+                      <th>Comments</th>
+                      <th>Actions</th>
+                    </tr> 
+                  </thead> 
+                  <tbody> 
+                    <tr> 
+                      <th scope="row">No</th>
+                      <td>Access</td> 
+                      <td>Permit</td> 
+                      <td>UDP</td>
+                      <td>192.168.1.1</td>
+                      <td>Any</td>
+                      <td>UDP</td>
+                      <td>53</td>
+                      <td>Permit IP</td>
+                      <td>
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Action <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a href="#">Allow</a>
+                            </li>
+                            <li>
+                              <a href="#">Deny</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr> 
+                  </tbody> 
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="pull-right" role="group" aria-label="">
+            <button type="button" class="btn btn-default btn-sm">Allow All</button>
+            <button type="button" class="btn btn-default btn-sm">Run</button>
+            <button type="button" class="btn btn-default btn-sm btn-danger">Disable All</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!--New Rule Set Set Modal-->
+    <div class="modal fade" id="addNewRuleSet" tabindex="-1" role="dialog" aria-labelledby="addNewRuleSetLabel">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h5 class="modal-title">Add New Rule Set</h5>
+            <div style="margin-bottom: 5%"></div>
+            <fieldset class="fieldset">
+              <legend style="font-size: 18px">Inbound Rules <small style="font-size: 12px"><a href="#">Add New</a></small></legend>
+              <div class="table-responsive">
+                <table class="table table-condensed">
+                  <thead>
+                    <tr>
+                      <th>Active</th> 
+                      <th>Type</th> 
+                      <th>Rule</th> 
+                      <th>Protocol</th>
+                      <th>Source</th>
+                      <th>Ports</th>
+                      <th>Destination</th>
+                      <th>Ports</th>
+                      <th>Comments</th>
+                      <th>Actions</th>
+                    </tr> 
+                  </thead>
+                  <tbody>
+                    <form>
+                      <tr>
+                        <td><input type="checkbox" name=""></td> 
+                        <td>
+                          <select class="form-control">
+                            <option value="">Type</option>
+                            <option value="TCP">Access</option>
+                          </select>
+                        </td> 
+                        <td>
+                          <select class="form-control">
+                            <option value="">Rule</option>
+                            <option value="Allow">Allow</option>
+                            <option value="Deny">Deny</option>
+                          </select>
+                        </td> 
+                        <td>
+                          <select class="form-control">
+                            <option value="">Protocol</option>
+                            <option value="TCP">TCP</option>
+                            <option value="UDP">UDP</option>
+                            <option value="HTTP">HTTP</option>
+                          </select>
+                        </td>
+                        <td><input type="number" class="form-control" name="" placeholder="Source" autocomplete="off"></td>
+                        <td><input type="number" class="form-control" name="" style="width: 60px" placeholder="Port" autocomplete="off"></td>
+                        <td><input type="number" class="form-control" name="" placeholder="Destination" autocomplete="off"></td>
+                        <td><input type="number" class="form-control" name="" style="width: 60px" placeholder="Port" autocomplete="off"></td>
+                        <td><input type="text" class="form-control" name="" placeholder="Comments" autocomplete="off"></td>
+                        <td>  
+                            <a href="#" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+                            <a href="#" class="btn btn-xs btn-success"><i class="glyphicon glyphicon-plus"></i></a>
+                        </td>
+                      </tr> 
+                    </form>
+                  </tbody>
+                </table>
+              </div>
+            </fieldset>
+            <div style="margin-bottom: 5%"></div>
+            <fieldset class="fieldset">
+              <legend style="font-size: 18px">Outbound Rules <small style="font-size: 12px"><a href="#">Add New</a></small></legend>
+              <div class="table-responsive">
+                <table class="table table-condensed">
+                  <thead>
+                    <tr>
+                      <th>Active</th> 
+                      <th>Type</th> 
+                      <th>Rule</th> 
+                      <th>Protocol</th>
+                      <th>Source</th>
+                      <th>Ports</th>
+                      <th>Destination</th>
+                      <th>Ports</th>
+                      <th>Comments</th>
+                      <th>Actions</th>
+                    </tr> 
+                  </thead>
+                  <tbody>
+                    <form>
+                      <tr>
+                        <td><input type="checkbox" name=""></td> 
+                        <td>
+                          <select class="form-control">
+                            <option value="">Type</option>
+                            <option value="TCP">Access</option>
+                          </select>
+                        </td> 
+                        <td>
+                          <select class="form-control">
+                            <option value="">Rule</option>
+                            <option value="Allow">Allow</option>
+                            <option value="Deny">Deny</option>
+                          </select>
+                        </td> 
+                        <td>
+                          <select class="form-control">
+                            <option value="">Protocol</option>
+                            <option value="TCP">TCP</option>
+                            <option value="UDP">UDP</option>
+                            <option value="HTTP">HTTP</option>
+                          </select>
+                        </td>
+                        <td><input type="number" class="form-control" name="" placeholder="Source" autocomplete="off"></td>
+                        <td><input type="number" class="form-control" name="" style="width: 60px" placeholder="Port" autocomplete="off"></td>
+                        <td><input type="number" class="form-control" name="" placeholder="Destination" autocomplete="off"></td>
+                        <td><input type="number" class="form-control" name="" style="width: 60px" placeholder="Port" autocomplete="off"></td>
+                        <td><input type="text" class="form-control" name="" placeholder="Comments" autocomplete="off"></td>
+                        <td>  
+                            <a href="#" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+                            <a href="#" class="btn btn-xs btn-success"><i class="glyphicon glyphicon-plus"></i></a>
+                        </td>
+                      </tr> 
+                    </form>
+                  </tbody>
+
+                </table>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/datatables/datatables.min.js"></script>
+    <script type="text/javascript">
+        var manageRuleSetTable;
+        //for datatables
+        manageRuleSetTable = $("#manageRuleSetTable").DataTable({
+          /*'ajax': 'php/fetchProduct.php',
+          'order': []*/
+        });
+    </script>
+  </body>
+</html>

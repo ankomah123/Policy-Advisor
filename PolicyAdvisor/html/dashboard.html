@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Ablaze</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Font-Awesome CSS -->
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <!--DataTables-->
+    <link rel="stylesheet" type="text/css" href="assets/plugins/datatables/datatables.min.css">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><i class="fa fa-fire"></i> Ablaze</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Username <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Profile</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+     <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <div>
+            <img src="img/" alt="Image">
+          </div>
+          <ul class="nav nav-sidebar">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="policy.html">Policy</a></li>
+            <li><a href="rule-set.html">Rule</a></li>
+            <li><a href="#">Policy Graph</a></li>
+            <li><a href="monitor.html">Monitor</a></li>
+            <li><a href="#">White-list</a></li>
+            <li><a href="#">Blacklist</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <div class="col-xs-6">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                    <h3 class="panel-title"></h3>
+                </div>
+                <div class="panel-body">
+                    <form role="form">
+                      <div class="row">
+                        <div class="col-xs-12">
+                          <label for="organization">Organization</label>
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-sitemap"></i></span>
+                            <select class="form-control" name="organization" id="organization">
+                              <option value="">~~Please select an option~~</option>
+                              <option value="School">School</option>
+                              <option value="Business">Business</option>
+                              <option value="Personal">Personal</option>
+                            </select>
+                            <span class="input-group-addon">
+                              <a href="#" data-toggle="tooltip" data-html="true" data-placement="right" title="Please select where or purpose for generating the rules.">
+                                <i class="fa fa-info-circle"></i>
+                              </a>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="row">
+                        <div class="col-xs-12">
+                          <label for="userclass">User Class</label>
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-users"></i></span>
+                            <select class="form-control" name="userclass" id="userclass">
+                              <option value="">~~Please select an option~~</option>
+                              <option value="Restricted User">Restricted User</option>
+                              <option value="User">User</option>
+                            </select>
+                            <span class="input-group-addon">
+                              <a href="#" data-toggle="tooltip" data-html="true" data-placement="right" title="Select the type of user for which the rules are to be genrated.">
+                                <i class="fa fa-info-circle"></i>
+                              </a>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <br>
+                      
+                      <button class="btn btn-sm btn-success btn-block" type="submit">Generate Policy</button> 
+                    </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip();   
+      });
+    </script>
+  </body>
+</html>

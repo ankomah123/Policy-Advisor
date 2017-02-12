@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Ablaze</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font-Awesome CSS -->
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <!--DataTables-->
+    <link rel="stylesheet" type="text/css" href="assets/plugins/datatables/datatables.min.css">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><i class="fa fa-fire"></i> Ablaze</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Username <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Profile</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+     <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <div>
+            <img src="img/" alt="Image">
+          </div>
+          <ul class="nav nav-sidebar">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="policy.html">Policy</a></li>
+            <li><a href="rule-set.html">Rule</a></li>
+            <li><a href="#">Policy Graph</a></li>
+            <li><a href="monitor.html">Monitor</a></li>
+            <li><a href="#">White-list</a></li>
+            <li><a href="#">Blacklist</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">Policy
+              <button href="#" class="btn btn-link btn-xs pull-right"><i class="fa fa-trash"></i> Remove Id</button>
+              <button href="#" data-target="#addNewPolicy" data-toggle="modal" class="btn btn-link btn-xs pull-right"><i class="fa fa-plus"></i> Add</button>
+            </div>
+            <div class="panel-body">
+              <div class="table-responsive">
+                <table class="table" id="managePolicyTable">
+                  <thead> 
+                    <tr>
+                      <th>Active</th>  
+                      <th>Rule Id</th> 
+                      <th>Service</th>
+                      <th>Type</th>
+                      <th>Source</th>
+                      <th>Category</th>
+                      <th>Destination</th>
+                      <th>Comment</th>
+                    </tr> 
+                  </thead> 
+                  <tbody>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="pull-right" role="group" aria-label="">
+            <button type="button" class="btn btn-default btn-sm">Save</button>
+            <button type="button" class="btn btn-success btn-sm">Run</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="addNewPolicy" tabindex="-1" role="dialog" aria-labelledby="addNewPolicyLabel">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h5 class="modal-title">Add Policy</h5>
+            <div style="margin-bottom: 5%"></div>
+            <fieldset class="fieldset">
+              <div class="table-responsive">
+                <table class="table table-condensed">
+                  <thead>
+                    <tr>
+                      <th>Service</th> 
+                      <th>Type</th> 
+                      <th>Source</th> 
+                      <th>Category</th>
+                      <th>Destination</th>
+                      <th>Comment</th>
+                    </tr> 
+                  </thead>
+                  <tbody>
+                    <form>
+                      <tr> 
+                        <td>
+                          <select class="form-control">
+                            <option value="">Service</option>
+                            <option value="TCP">TCP</option>
+                            <option value="UDP">UDP</option>
+                          </select>
+                        </td> 
+                        <td>
+                          <select class="form-control">
+                            <option value="">Type</option>
+                            <option value="Allow">Allow</option>
+                            <option value="Deny">Deny</option>
+                          </select>
+                        </td> 
+                        <td><input class="form-control" type="text" name="" placeholder="Source" autocomplete="off"></td>
+                        <td>
+                          <select class="form-control">
+                            <option value="">Category</option>
+                            <option value="Social Networking">Social Networking</option>
+                            <option value="Torrent">Torrent</option>
+                          </select>
+                        </td> 
+                        <td><input class="form-control" type="text" name="" placeholder="Destination" autocomplete="off"></td>
+                        <td><input class="form-control" type="text" name="" placeholder="Comment" autocomplete="off"></td>
+                      </tr> 
+                    </form>
+                  </tbody>
+                </table>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/datatables/datatables.min.js"></script>
+    <script type="text/javascript">
+        var managePolicyTable;
+        //for datatables
+        managePolicyTable = $("#managePolicyTable").DataTable({
+          /*'ajax': 'php/fetchProduct.php',
+          'order': []*/
+        });
+    </script>
+  </body>
+</html>
